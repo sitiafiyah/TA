@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void fillData() {
         Resources resources = getResources();
-        String[] arJudul = resources.getStringArray(R.array.places);
-        String[] arDeskripsi = resources.getStringArray(R.array.place_desc);
-        TypedArray a = resources.obtainTypedArray(R.array.places_picture);
+        String[] arTanggal = resources.getStringArray(R.array.date);
+        String[] arCategory = resources.getStringArray(R.array.category);
+        TypedArray a = resources.obtainTypedArray(R.array.picture);
         Drawable[] arFoto = new Drawable[a.length()];
 
         for (int i = 0; i < arFoto.length; i++) {
@@ -61,8 +61,8 @@ public class MainActivity extends AppCompatActivity {
         }
         a.recycle();
 
-        for (int i = 0; i < arJudul.length; i++) {
-            mList.add(new Hotel(arJudul[i], arDeskripsi[i], arFoto[i]));
+        for (int i = 0; i < arTanggal.length; i++) {
+            mList.add(new Hotel(arTanggal[i], arCategory[i], arFoto[i]));
         }
         mAdapter.notifyDataSetChanged();
     }

@@ -23,7 +23,7 @@
             tools:src="@drawable/a" />
 
         <TextView
-            android:id="@+id/textViewJudul"
+            android:id="@+id/textViewTanggal"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_alignBottom="@+id/imageView"
@@ -33,7 +33,7 @@
             tools:text="Judul" />
 
         <TextView
-            android:id="@+id/textViewDeskripsi"
+            android:id="@+id/textViewCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView"
@@ -48,7 +48,7 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewDeskripsi"
+            android:layout_below="@+id/textViewCategory"
             android:layout_marginLeft="16dp"
             android:text="EDIT"
             android:textColor="?attr/colorPrimary" />
@@ -58,21 +58,12 @@
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewDeskripsi"
+            android:layout_below="@+id/textViewCategory"
             android:layout_marginLeft="16dp"
             android:layout_toRightOf="@+id/buttonEdit"
             android:text="DELETE"
             android:textColor="?attr/colorAccent" />
 
-        <ImageButton
-            android:id="@+id/buttonFavorite"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_below="@+id/textViewDeskripsi"
-            android:layout_toLeftOf="@+id/buttonShare"
-            android:tint="#757575"
-            app:srcCompat="@drawable/ic_favorite_black_24dp" />
 
         <ImageButton
             android:id="@+id/buttonShare"
@@ -80,7 +71,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/textViewDeskripsi"
+            android:layout_below="@+id/textViewCategory"
             android:layout_marginRight="16dp"
             android:tint="#757575"
             app:srcCompat="@drawable/ic_share_black_24dp" />
