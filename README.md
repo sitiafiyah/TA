@@ -3,7 +3,7 @@
 #PENJELASAN APLIKASI
 * Aplikasi ini menyediakan penyimpanan untuk catatan yang praktis di smartphone anda. Entah dari catatan yang berkategorikan pribadi
 atau personal, maupun catatan yang dapat menyimpan List Jadwal, List Tugas sekolah, Event, dan lain sebagainya.
-Dan memudahkan para pengguna juga untuk menguploadyang berhubungan dengan moment photo di setiap catatan anda. 
+Dan memudahkan para pengguna juga untuk mengupload gambar yang dapat berhubungan dengan moment moment di setiap catatan anda. 
 Aplikasi ini juga memudahkan para user untuk menshare catatan yang telah mereka buat di dalamnya melalui Social Media 
 yang saat ini sangatlah Booming untuk digunakan pada Operating System Android, yaitu LINE.
 Aplikasi ini juga dapat menghapus, mengedit catatan yang telah user buat sebelumnya.
