@@ -19,19 +19,19 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-import id.sch.smktelkom_mlg.project.xirpl506152433.ok.adapter.HotelAdapter;
-import id.sch.smktelkom_mlg.project.xirpl506152433.ok.model.Hotel;
+import id.sch.smktelkom_mlg.project.xirpl506152433.ok.adapter.NoteAdapter;
+import id.sch.smktelkom_mlg.project.xirpl506152433.ok.model.Note;
 
-public class MainActivity extends AppCompatActivity implements HotelAdapter.IHotelAdapter {
+public class MainActivity extends AppCompatActivity implements NoteAdapter.IHotelAdapter {
     public static final String HOTEL = "hotel";
     public static final int REQUEST_CODE_ADD = 88;
     public static final int REQUEST_CODE_EDIT = 99;
-    ArrayList<Hotel> mList = new ArrayList<>();
-    HotelAdapter mAdapter;
+    ArrayList<Note> mList = new ArrayList<>();
+    NoteAdapter mAdapter;
 
     int itemPos;
 
-    ArrayList<Hotel> mListAll = new ArrayList<>();
+    ArrayList<Note> mListAll = new ArrayList<>();
     boolean isFiltered;
     ArrayList<Integer> mListMapFilter = new ArrayList<>();
     String mQuery;
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements HotelAdapter.IHot
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new HotelAdapter(this, mList);
+        mAdapter = new NoteAdapter(this, mList);
         recyclerView.setAdapter(mAdapter);
 
         fillData();
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements HotelAdapter.IHot
         a.recycle();
 
         for (int i = 0; i < arTanggal.length; i++) {
-            mList.add(new Hotel(arTanggal[i], arCategory[i],
+            mList.add(new Note(arTanggal[i], arCategory[i],
                     arDiary[i], arQuotes[i], arFoto[i]));
         }
         mAdapter.notifyDataSetChanged();
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements HotelAdapter.IHot
         } else {
             mListMapFilter.clear();
             for (int i = 0; i < mListAll.size(); i++) {
-                Hotel hotel = mListAll.get(i);
+                Note hotel = mListAll.get(i);
                 if (hotel.tanggal.toLowerCase().contains(query) ||
                         hotel.category.toLowerCase().contains(query) ||
                         hotel.diary.toLowerCase().contains(query)) {
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements HotelAdapter.IHot
     @Override
     public void doDelete(int pos) {
         itemPos = pos;
-        final Hotel hotel = mList.get(pos);
+        final Note hotel = mList.get(pos);
         mList.remove(itemPos);
         if (isFiltered) mListAll.remove(mListMapFilter.get(itemPos).intValue());
         mAdapter.notifyDataSetChanged();
@@ -210,13 +210,13 @@ public class MainActivity extends AppCompatActivity implements HotelAdapter.IHot
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_ADD && resultCode == RESULT_OK) {
-            Hotel hotel = (Hotel) data.getSerializableExtra(HOTEL);
+            Note hotel = (Note) data.getSerializableExtra(HOTEL);
             mList.add(hotel);
             if (isFiltered) mListAll.add(hotel);
             doFilter(mQuery);
             //mAdapter.notifyDataSetChanged();
         } else if (requestCode == REQUEST_CODE_EDIT && resultCode == RESULT_OK) {
-            Hotel hotel = (Hotel) data.getSerializableExtra(HOTEL);
+            Note hotel = (Note) data.getSerializableExtra(HOTEL);
             mList.remove(itemPos);
             if (isFiltered) mListAll.remove(mListMapFilter.get(itemPos).intValue());
             mList.add(itemPos, hotel);

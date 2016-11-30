@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by Siti Afiyah on 10/29/2016.
  */
 
-public class Hotel implements Serializable {
+public class Note implements Serializable {
 
     public String tanggal;
     public String category;
@@ -14,7 +14,7 @@ public class Hotel implements Serializable {
     public String quotes;
     public String foto;
 
-    public Hotel(String tanggal, String category, String diary, String quotes, String foto) {
+    public Note(String tanggal, String category, String diary, String quotes, String foto) {
         this.tanggal = tanggal;
         this.category = category;
         this.diary = diary;

@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import id.sch.smktelkom_mlg.project.xirpl506152433.ok.model.Hotel;
+import id.sch.smktelkom_mlg.project.xirpl506152433.ok.model.Note;
 
 public class InputActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_GET = 1;
@@ -21,7 +21,7 @@ public class InputActivity extends AppCompatActivity {
     EditText etQuotes;
     ImageView ivFoto;
     Uri uriFoto;
-    Hotel hotel;
+    Note hotel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class InputActivity extends AppCompatActivity {
             }
         });
 
-        hotel = (Hotel) getIntent().getSerializableExtra(MainActivity.HOTEL);
+        hotel = (Note) getIntent().getSerializableExtra(MainActivity.HOTEL);
         if (hotel != null) {
             setTitle("Edit " + hotel.tanggal);
             fillData();
@@ -74,7 +74,7 @@ public class InputActivity extends AppCompatActivity {
         String quotes = etQuotes.getText().toString();
 
         if (isValid(tanggal, kategori, diary, quotes, uriFoto)) {
-            hotel = new Hotel(tanggal, kategori,
+            hotel = new Note(tanggal, kategori,
                     diary, quotes, uriFoto.toString());
 
             Intent intent = new Intent();

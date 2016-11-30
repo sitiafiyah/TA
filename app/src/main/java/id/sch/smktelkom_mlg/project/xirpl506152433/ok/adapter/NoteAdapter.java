@@ -14,18 +14,18 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import id.sch.smktelkom_mlg.project.xirpl506152433.ok.R;
-import id.sch.smktelkom_mlg.project.xirpl506152433.ok.model.Hotel;
+import id.sch.smktelkom_mlg.project.xirpl506152433.ok.model.Note;
 
 /**
  * Created by Siti Afiyah on 10/29/2016.
  */
 
-public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> {
+public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
-    ArrayList<Hotel> hotelList;
+    ArrayList<Note> hotelList;
     IHotelAdapter mIHotelAdapter;
 
-    public HotelAdapter(Context context, ArrayList<Hotel> hotelList) {
+    public NoteAdapter(Context context, ArrayList<Note> hotelList) {
         this.hotelList = hotelList;
         mIHotelAdapter = (IHotelAdapter) context;
     }
@@ -40,7 +40,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Hotel hotel = hotelList.get(position);
+        Note hotel = hotelList.get(position);
         holder.tvTanggal.setText(hotel.tanggal);
         holder.tvCategory.setText(hotel.category);
         holder.ivFoto.setImageURI(Uri.parse(hotel.foto));

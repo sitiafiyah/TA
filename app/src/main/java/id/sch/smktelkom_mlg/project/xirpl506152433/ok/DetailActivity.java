@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import id.sch.smktelkom_mlg.project.xirpl506152433.ok.model.Hotel;
+import id.sch.smktelkom_mlg.project.xirpl506152433.ok.model.Note;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -30,7 +30,7 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-        Hotel hotel = (Hotel) getIntent().getSerializableExtra(MainActivity.HOTEL);
+        Note hotel = (Note) getIntent().getSerializableExtra(MainActivity.HOTEL);
         setTitle(hotel.tanggal);
         ImageView ivFoto = (ImageView) findViewById(R.id.imageFoto);
         ivFoto.setImageURI(Uri.parse(hotel.foto));
