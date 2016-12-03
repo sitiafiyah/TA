@@ -1,6 +1,8 @@
 package id.sch.smktelkom_mlg.project.xirpl506152433.ok;
 
+import android.app.AlertDialog;
 import android.content.ContentResolver;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -17,6 +19,7 @@ import android.transition.AutoTransition;
 import android.transition.Scene;
 import android.transition.Transition;
 import android.transition.TransitionManager;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.IHote
     public static final int REQUEST_CODE_EDIT = 99;
     ArrayList<Note> mList = new ArrayList<>();
     NoteAdapter mAdapter;
-
+    DialogInterface.OnClickListener listener;
 
     int itemPos;
 
@@ -76,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.IHote
         //initialize flag
         start = true;
 
-////////////////////////////////////
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -214,12 +216,43 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.IHote
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //jika tombol BACK ditekan
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Keluar();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private void Keluar() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Apakah anda yakin ingin keluar?");
+        builder.setCancelable(false);//tombol BACK tidak bisa tekan
+
+        listener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (which == DialogInterface.BUTTON_POSITIVE) {
+                    finish(); //keluar aplikasi
+                } else if (which == DialogInterface.BUTTON_NEGATIVE) {
+                    dialog.cancel(); //batal keluar
+                }
+            }
+        };
+
+        builder.setPositiveButton("Ya", listener);
+        builder.setNegativeButton("Tidak", listener);
+        builder.show(); //menampilkan dialog
+
+    }
+
+
+    @Override
     public void doClick(int pos) {
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra(HOTEL, mList.get(pos));
         startActivity(intent);
     }
-
     @Override
     public void doEdit(int pos) {
         itemPos = pos;
