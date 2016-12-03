@@ -13,9 +13,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.transition.AutoTransition;
+import android.transition.Scene;
+import android.transition.Transition;
+import android.transition.TransitionManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
@@ -29,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.IHote
     ArrayList<Note> mList = new ArrayList<>();
     NoteAdapter mAdapter;
 
+
     int itemPos;
 
     ArrayList<Note> mListAll = new ArrayList<>();
@@ -36,8 +44,40 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.IHote
     ArrayList<Integer> mListMapFilter = new ArrayList<>();
     String mQuery;
 
+    //scenes to transition
+    private Scene scene1, scene2;
+    //transition to move between scenes
+    private Transition transition;
+    //flag to swap between scenes
+    private boolean start;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //get the layout ID
+        RelativeLayout baseLayout = (RelativeLayout) findViewById(R.id.base);
+
+        //first scene
+        ViewGroup startViews = (ViewGroup) getLayoutInflater()
+                .inflate(R.layout.activity_main, baseLayout, false);
+
+        //second scene
+        ViewGroup endViews = (ViewGroup) getLayoutInflater()
+                .inflate(R.layout.activity_main, baseLayout, false);
+        //create the two scenes
+        scene1 = new Scene(baseLayout, startViews);
+        scene2 = new Scene(baseLayout, endViews);
+
+        //create transition, set properties
+        transition = new AutoTransition();
+        transition.setDuration(5000);
+        transition.setInterpolator(new AccelerateDecelerateInterpolator());
+
+        //initialize flag
+        start = true;
+
+////////////////////////////////////
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -88,6 +128,18 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.IHote
                     arDiary[i], arQuotes[i], arFoto[i]));
         }
         mAdapter.notifyDataSetChanged();
+    }
+
+    public void changeScene(View v) {
+
+        //check flag
+        if (start) {
+            TransitionManager.go(scene2, transition);
+            start = false;
+        } else {
+            TransitionManager.go(scene1, transition);
+            start = true;
+        }
     }
 
     @Override
