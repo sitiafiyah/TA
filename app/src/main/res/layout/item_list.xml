@@ -13,14 +13,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            tools:src="@drawable/a" />
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
 
         <TextView
             android:id="@+id/textViewTanggal"
@@ -32,49 +26,66 @@
             android:textColor="@android:color/white"
             tools:text="Judul" />
 
+
         <TextView
             android:id="@+id/textViewCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView"
+            android:layout_alignLeft="@+id/textViewTanggal"
+            android:layout_alignStart="@+id/textViewTanggal"
+            android:layout_below="@+id/textViewTanggal"
+            android:layout_marginTop="11dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:padding="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             tools:text="Deskripsi" />
 
-        <Button
-            android:id="@+id/buttonEdit"
+        <ImageButton
+            android:id="@+id/buttonShare"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewCategory"
-            android:layout_marginLeft="16dp"
-            android:text="EDIT"
-            android:textColor="?attr/colorPrimary" />
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignBottom="@+id/textViewTanggal"
+            android:layout_alignEnd="@+id/buttonDelete"
+            android:layout_alignRight="@+id/buttonDelete"
+            android:layout_marginEnd="18dp"
+            android:layout_marginRight="18dp"
+            android:tint="#757575"
+            app:srcCompat="@drawable/ic_share_black_24dp" />
 
         <Button
             android:id="@+id/buttonDelete"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewCategory"
-            android:layout_marginLeft="16dp"
-            android:layout_toRightOf="@+id/buttonEdit"
+            android:layout_above="@+id/buttonShare"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
             android:text="DELETE"
             android:textColor="?attr/colorAccent" />
 
-
-        <ImageButton
-            android:id="@+id/buttonShare"
+        <Button
+            android:id="@+id/buttonEdit"
             style="?android:attr/borderlessButtonStyle"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/textViewCategory"
-            android:layout_marginRight="16dp"
-            android:tint="#757575"
-            app:srcCompat="@drawable/ic_share_black_24dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonDelete"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:text="EDIT"
+            android:textColor="?attr/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignLeft="@+id/textViewTanggal"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/textViewTanggal"
+            android:layout_marginTop="27dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/a" />
 
     </RelativeLayout>
 </android.support.v7.widget.CardView>
