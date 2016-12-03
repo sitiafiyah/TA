@@ -15,23 +15,24 @@
   -->
 <resources>
     <string-array name="date">
-        <item>01 November 2016</item>
+        <item>10 Mei 2017</item>
     </string-array>
     <string-array name="category">
-        <item>Saat ini saya merasa sangat senang sekali
+        <item>TRAVELLING in london
         </item>
     </string-array>
     <string-array name="diary">
         <item>Banyak pengalaman dan nilai kehidupan yang baik untuk ku.
-            Banyak pengalaman dan nilai kehidupan yang baik untuk ku.
-            Banyak pengalaman dan nilai kehidupan yang baik untuk ku.
-            Banyak pengalaman dan nilai kehidupan yang baik untuk ku.
-            Banyak pengalaman dan nilai kehidupan yang baik untuk ku.
-            Banyak pengalaman dan nilai kehidupan yang baik untuk ku.
+            Terutama aku pergi kesini untuk yang pertama kalinya.
+            Bersama dengan keluargaku, ayah, ibu, kakak, dan adik.
+            Senang sekali bisa menatap mereka penuh bahagia berlibur bersama.
+            Sudah lama sejak aku pindah merantau untuk menuntut ilmu,
+            sudah lama pula aku tak melihat lengkapnya senyum keluargaku.
         </item>
     </string-array>
     <string-array name="quotes">
-        <item>Never Gives Up</item>
+        <item>Buatlah Bahagia mengendalikan Duniamu,
+        Bukan Dunia yang mengendalikan Bahagiamu.</item>
     </string-array>
     <array name="picture">
         <item>@drawable/a</item>
