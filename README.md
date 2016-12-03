@@ -28,6 +28,8 @@
 # LINK PROJECT
 https://drive.google.com/drive/u/0/folders/0B1Py9wVJD0RrMzRWenVaZVpPazA
 
+#LINK VIDE PROMOTE
+
 # IDENTITAS ANGGOTA KELOMPOK
 1. NAMA = AYU IKA FATIMATUS ZAHRO 
    <br> KELAS = XI RPL 5
