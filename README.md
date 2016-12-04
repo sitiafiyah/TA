@@ -28,7 +28,8 @@
 # LINK PROJECT
 https://drive.google.com/drive/u/0/folders/0B1Py9wVJD0RrMzRWenVaZVpPazA
 
-#LINK VIDE PROMOTE
+#LINK VIDEO PROMOTE
+https://www.youtube.com/channel/UC6Ep5b21Q9Spe0XsH0QKAoA
 
 # IDENTITAS ANGGOTA KELOMPOK
 1. NAMA = AYU IKA FATIMATUS ZAHRO 
